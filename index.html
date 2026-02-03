@@ -5,52 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Be My Valentine?</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="./Styles/styles.css">
     <script src="./script.js" defer></script>
-
-    <style>
-        /* Small layout fix to ensure vertical stacking works perfectly */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .made-with-love {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            color: #000000;
-            font-weight: bold;
-            font-family: 'Nunito', sans-serif;
-            font-size: 14px;
-            /* Slightly smaller for mobile elegance */
-            opacity: 0.7;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="header_text">Kon Su, Will you be my valentine? hehe ❤️.</h1>
 
         <div class="gif_container">
             <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWhldHExYnhsYjV6M3M5d3FlOW1lZXJmNTQycXdxMDZ1d2QxNTV6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nfxB2n6sUGoRq/giphy.gif"
                 alt="Cute animated illustration">
         </div>
-        
+
+        <h1 class="header_text">Kon Su, will you be my Valentine? hehe ❤️</h1>
+
+        <div class="heartbeat-box">
+            <svg xmlns="http://www.w3.org/2000/svg" id="heartbeat-svg" viewBox="-5 -5 278 56">
+                <filter id="blur">
+                    <feGaussianBlur stdDeviation="1.6" />
+                </filter>
+                <g transform="translate(29.1 -127.42)">
+                    <path id="heart-line"
+                        d="M-28.73 167.2c26.43 9.21 68.46-9.46 85.45-12.03 18.45-2.78 32.82 4.86 28.75 9.83-3.82 4.66-25.77-21.18-14.81-31.5 9.54-8.98 17.64 10.64 16.42 17.06-1.51-6.2 2.95-26.6 14.74-22.11 11.7 4.46-4.33 49.03-15.44 44.08-6.97-3.1 15.44-16.26 26.1-16 23.03.56 55.6 27.51 126.63 3.36"
+                        pathLength="1" />
+                </g>
+                <g transform="translate(29.1 -127.42)">
+                    <path filter="url(#blur)" id="heart-point"
+                        d="M-28.73 167.2c26.43 9.21 68.46-9.46 85.45-12.03 18.45-2.78 32.82 4.86 28.75 9.83-3.82 4.66-25.77-21.18-14.81-31.5 9.54-8.98 17.64 10.64 16.42 17.06-1.51-6.2 2.95-26.6 14.74-22.11 11.7 4.46-4.33 49.03-15.44 44.08-6.97-3.1 15.44-16.26 26.1-16 23.03.56 55.6 27.51 126.63 3.36"
+                        pathLength="1" />
+                </g>
+            </svg>
+        </div>
+
         <div class="buttons">
-            <button class="btn" id="yesButton" onclick="nextPage()">Yes ❤️</button>
-            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            <button class="btn" id="yesButton">Yes ❤️</button>
+            <button class="btn" id="noButton">No</button>
         </div>
     </div>
 
