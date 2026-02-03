@@ -24,16 +24,18 @@ body {
 
 /* Header Text */
 .header_text {
-    font-family: 'Pacifico';
+    font-family: 'Pacifico', cursive;
+    /* Added fallback */
     font-size: 50px;
     font-weight: bold;
     color: #000000;
-    /* Lavender Blush (Softer than pure white) */
     text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.4);
-    /* Pinkish shadow for readability */
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
+    /* Changed from 0 to 20px for breathing room */
+    padding: 0 10px;
+    /* Prevents text hitting edge on mobile */
 }
 
 /* Button Container */

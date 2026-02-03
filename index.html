@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="./Styles/styles.css">
     <script src="./script.js" defer></script>
-    <style>
-        /* Add your existing styles here */
 
-        /* Additional style for the note */
+    <style>
+        /* Small layout fix to ensure vertical stacking works perfectly */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
         .made-with-love {
             position: fixed;
-            bottom: 10px; /* Adjust this value to move it closer to the bottom */
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
             color: #000000;
             font-weight: bold;
             font-family: 'Nunito', sans-serif;
-            font-size: 20px;
-        }
-        
-        .github-link {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
+            font-size: 14px;
+            /* Slightly smaller for mobile elegance */
+            opacity: 0.7;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div>
-            <h1 class="header_text">Kon Su, Will you be my valentine? hehe ❤️.</h1>
-        </div>
+        <h1 class="header_text">Kon Su, Will you be my valentine? hehe ❤️.</h1>
+
         <div class="gif_container">
-            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWhldHExYnhsYjV6M3M5d3FlOW1lZXJmNTQycXdxMDZ1d2QxNTV6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nfxB2n6sUGoRq/giphy.gif" alt="Cute animated illustration">
-        </div>
-        <div class="buttons">
-            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
-            <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWhldHExYnhsYjV6M3M5d3FlOW1lZXJmNTQycXdxMDZ1d2QxNTV6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nfxB2n6sUGoRq/giphy.gif"
+                alt="Cute animated illustration">
         </div>
 
-        <!-- Positioned closer to the bottom with GitHub link -->
-        <p class="made-with-love">
-            I know this is not the best for you but made with my love ❤️. 
-        </p>
-    
-    
-    
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes ❤️</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
     </div>
+
+    <p class="made-with-love">
+        I know this is not the best for you but made with my love ❤️.
+    </p>
 </body>
+
 </html>

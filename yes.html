@@ -4,9 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Styles/yes.css">
-   
     <title>Yay!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./Styles/yes.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
+            background-color: #fce4ec;
+            /* Fallback pink color */
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+
+            /* REMOVED THE WHITE BACKGROUND BOX HERE */
+            background-color: transparent;
+        }
+
+        .header_text {
+            font-family: 'Pacifico', cursive;
+            font-size: 50px;
+            color: #ff4d4d;
+            margin-bottom: 20px;
+
+            /* Added a white outline so text pops against photos */
+            text-shadow:
+                3px 3px 0px #fff,
+                -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px 1px 0 #fff;
+        }
+
+        .text {
+            font-family: 'Nunito', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            color: #000;
+
+            /* White outline for readability */
+            text-shadow:
+                2px 2px 0px #fff,
+                -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px 1px 0 #fff;
+        }
+
+        .gif_container img {
+            max-width: 300px;
+            border-radius: 15px;
+            /* Added a thick white border to the GIF to make it stand out */
+            border: 5px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .footer_text {
+            font-family: 'Nunito', sans-serif;
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            z-index: 10;
+            color: #333;
+
+            /* White glow for footer text */
+            text-shadow: 0px 0px 5px #fff, 0px 0px 5px #fff;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        /* BACKGROUND PHOTOS */
+        .three-part-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: flex;
+            flex-wrap: wrap;
+            /* Slightly clearer opacity now that the box is gone */
+            opacity: 0.6;
+            overflow: hidden;
+        }
+
+        .three-part-background img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,7 +121,6 @@
         <h1 class="header_text">Yay! Best decision ever! 💙</h1>
         <div class="gif_container">
             <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cute animated illustration">
-            <!-- <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3pzYzZyazI5ZnBhbW9qdGk1aDYxaHRmeDExNXo3YXU5ZzJ4YzE2cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CqRgIUk16tzcQ/giphy.gif" alt="Cute animated illustration"> -->
         </div>
         <p class="text">You're now My Girlfriend.</p>
     </div>
@@ -28,36 +133,29 @@
     </p>
 
     <script>
-        // 1. Define your 3 images here
         const images = [
-            
             'Styles/my2.jpeg',
             'Styles/my3.jpeg',
             'Styles/my4.jpeg',
-            'Styles/my5.jpeg',      
+            'Styles/my5.jpeg',
             'Styles/my6.jpeg',
             'Styles/my7.jpeg',
             'Styles/my8.jpeg',
             'Styles/my9.jpeg',
             'Styles/my10.jpeg',
-            
-            
         ];
 
         const container = document.getElementById('bgContainer');
-
-        // 2. Calculate how many images we need to fill the screen
-        // We add a buffer of 50 extra images just to be safe
         const titleSize = 120;
         const rows = Math.ceil(window.innerHeight / titleSize);
         const cols = Math.ceil(window.innerWidth / titleSize);
         const totalImages = (rows * cols) + 20;
 
-        // 3. Loop and create the images
         for (let i = 0; i < totalImages; i++) {
             const img = document.createElement('img');
-            // This math (i % images.length) cycles through 0, 1, 2 repeatedly
             img.src = images[i % images.length];
+            // Added random rotation for cuteness
+            img.style.transform = `rotate(${Math.random() * 10 - 5}deg)`;
             container.appendChild(img);
         }
     </script>
