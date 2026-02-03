@@ -70,3 +70,15 @@ function nextPage() {
 noButton.addEventListener('mouseenter', moveButton); // Desktop
 noButton.addEventListener('click', moveButton);      // Mobile
 yesButton.addEventListener('click', nextPage);
+
+// --- NEW: Handle Envelope Opening ---
+
+const envelope = document.getElementById('envelope');
+
+// When the envelope is clicked...
+envelope.addEventListener('click', () => {
+    // Add the class that triggers the CSS transition (slide up)
+    envelope.classList.add('open');
+    
+    // Optional: Play music here if you wanted to!
+});
