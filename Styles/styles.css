@@ -1,9 +1,28 @@
-body {
+/* body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #CBE6EF;
+} */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    /* Add your pixel art image URL below */
+    background-image: url('/Styles/family.jpg');
+
+    /* Ensure the image covers the whole screen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* CRITICAL: This keeps the pixels sharp and not blurry */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 /* Position the "No" button absolutely within body */
@@ -28,7 +47,7 @@ body {
     font-family: 'Nunito';
     font-size: 50px;
     font-weight: bold;
-    color: rgb(164, 0, 240);
+    color: rgba(212, 0, 240, 0.863);
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0px;
