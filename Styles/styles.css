@@ -13,7 +13,7 @@ body {
     height: 100vh;
 
     /* Add your pixel art image URL below */
-    background-image: url('/Styles/family.jpg');
+    background-image: url('/Styles/cute-cat.gif');
 
     /* Ensure the image covers the whole screen */
     background-size: cover;
