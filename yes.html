@@ -5,26 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/yes.css">
-    <!-- Include any additional stylesheets or meta tags here -->
+    <title>Yay!</title>
 </head>
 
 <body>
+
     <div class="container">
-        <div>
-            <h1 class="header_text">Yay! Best decision ever! 💙</h1>
-        </div>
+        <h1 class="header_text">Yay! Best decision ever! 💙</h1>
         <div class="gif_container">
-            <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cute animated illustration" style="margin-top: 60px;">
+            <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cute animated illustration">
+            <!-- <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3pzYzZyazI5ZnBhbW9qdGk1aDYxaHRmeDExNXo3YXU5ZzJ4YzE2cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CqRgIUk16tzcQ/giphy.gif" alt="Cute animated illustration"> -->
         </div>
-        <!-- Adjusted position of the text element by 100px -->
-        <p class="text" style="margin-top: 100px;">You're now My Girlfriend.</p>
+        <p class="text">You're now My Girlfriend.</p>
     </div>
 
-    <!-- Note: Positioned at the bottom near the footbar -->
-    <p style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); text-align: center; color: #777;">
-        Happy Valentine’s Day! I hope you love this website as much as I love spending time with you.💖</p>
+    <div class="three-part-background" id="bgContainer">
+    </div>
 
-    <!-- Include any external scripts if needed -->
+    <p class="footer_text">
+        Happy Valentine’s Day! I hope you love this website as much as I love spending time with you.💖
+    </p>
+
+    <script>
+        // 1. Define your 3 images here
+        const images = [
+            '/Styles/2026-01-23 17-16-27.jpeg',
+            '/Styles/2026-01-25 17-36-58.jpeg',
+            '/Styles/2026-02-01 18-50-40.jpeg',
+            '/Styles/2026-01-29 15-02-04.jpeg',
+            '/Styles/2026-01-25 17-36-58.jpeg',
+            '/Styles/2026-01-23 17-16-27.jpeg',
+            '/Styles/2026-01-29 15-02-04.jpeg',
+            '/Styles/2026-02-01 18-50-40.jpeg',
+            '/Styles/2025-12-03 16-03-08.jpeg',
+            '/Styles/2025-12-01 18-47-43.jpeg',
+            '/Styles/2025-12-01 18-39-56.jpeg',
+            '/Styles/2025-11-26 18-50-21.jpeg',
+            '/Styles/2025-11-20 16-47-43.jpeg',
+            '/Styles/2025-11-08 23-04-53.jpeg',
+            '/Styles/2025-09-17 18-33-15.jpeg',
+            '/Styles/2025-11-20 16-47-43.jpeg',
+            
+        ];
+
+        const container = document.getElementById('bgContainer');
+
+        // 2. Calculate how many images we need to fill the screen
+        // We add a buffer of 50 extra images just to be safe
+        const titleSize = 120;
+        const rows = Math.ceil(window.innerHeight / titleSize);
+        const cols = Math.ceil(window.innerWidth / titleSize);
+        const totalImages = (rows * cols) + 20;
+
+        // 3. Loop and create the images
+        for (let i = 0; i < totalImages; i++) {
+            const img = document.createElement('img');
+            // This math (i % images.length) cycles through 0, 1, 2 repeatedly
+            img.src = images[i % images.length];
+            container.appendChild(img);
+        }
+    </script>
+
 </body>
 
 </html>

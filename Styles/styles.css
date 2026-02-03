@@ -1,120 +1,130 @@
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #CBE6EF;
-} */
-
+/* Fallback background if image fails */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    /* NEW COLOR: Soft Valentine Pink */
+    background-color: #ffffff;
+    
+    /* OPTIONAL: A subtle gradient makes it look more professional */
+    background: linear-gradient(to bottom right, #ffe6e6, #ffccd5);
+    
+    margin: 0; /* Important to remove default browser margin */
+    overflow: hidden; /* Prevents scrollbars if elements move around */
 
-    /* Add your pixel art image URL below */
-    background-image: url('/Styles/cute-cat.gif');
-
-    /* Ensure the image covers the whole screen */
+    /* Soft Pink Fallback */
+    /* background-image: url('/Styles/christopher-beloch-P2fBIamIbQk-unsplash.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-
-    /* CRITICAL: This keeps the pixels sharp and not blurry */
     image-rendering: pixelated;
-    image-rendering: crisp-edges;
+    image-rendering: crisp-edges; */
 }
 
-/* Position the "No" button absolutely within body */
-#noButton {
-    position: absolute;
-    margin-left: 150px;
-    transition: 0.5s;
-    border: 2px solid #ffffff;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a 2px horizontal, 2px vertical, 5px blur, and 0.3 opacity shadow */
-}
-
-#yesButton {
-    position: absolute;
-    margin-right: 150px;
-    border: 2px solid #ffffff;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-
-
+/* Header Text */
 .header_text {
-    font-family: 'Nunito';
+    font-family: 'Pacifico';
     font-size: 50px;
     font-weight: bold;
-    color: rgba(212, 0, 240, 0.863);
+    color: #000000;
+    /* Lavender Blush (Softer than pure white) */
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.4);
+    /* Pinkish shadow for readability */
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0px;
 }
 
+/* Button Container */
 .buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 55px;
-    margin-left: 20px;
-    /* optional: adds some space between the buttons */
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
 }
 
+/* Main Button Style */
 .btn {
-    background-color: #80c3d8;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 15px 32px;
     text-align: center;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
+    /* Slightly larger text like the viral site */
+    font-weight: bold;
+    /* Bold text makes it pop */
     margin: 4px 2px;
     cursor: pointer;
     border: none;
-    border-radius: 12px;
-    transition: background-color 0.3s ease;
-}
-
-
-
-.btn:hover {
-    background-color: #FAF9F6;
-}
-
-/* .gif_container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; 
-    margin-left: 20px; 
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 2px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    padding: 10px;
-    margin-top: 20px;
-} */
+    /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-family: 'Nunito', sans-serif;
+    /* Clean, round font used in these sites */
+}
 
+/* Hover Effect */
+.btn:hover {
+    background-color: #FFF5F5;
+    /* Very pale pink/white */
+    color: #FF9AA2;
+    /* Text turns pink */
+    transform: scale(1.05);
+    /* Slight pop up effect */
+}
+
+#yesButton {
+    background-color: #2ecc71;
+    /* The classic viral "Emerald Green" */
+    box-shadow: 0 5px 0 #27ae60;
+    /* Darker green 3D shadow effect */
+}
+
+#yesButton:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+    /* Grows slightly when you hover */
+}
+
+/* Specific Style for the NO Button (Red) */
+#noButton {
+    background-color: #e74c3c;
+    /* The classic "Alizarin Red" */
+    box-shadow: 0 5px 0 #c0392b;
+    /* Darker red 3D shadow effect */
+    transition: 0.5s;
+    /* Keep this for the moving animation script */
+}
+
+#noButton:hover {
+    background-color: #c0392b;
+}
+
+
+/* GIF Container */
 .gif_container {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Changed from flex-end to center */
     margin: 20px auto 0 auto;
-    /* Centers the container horizontally */
-    border: 2px solid #ffffff;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    padding: 10px;
+    /* border: 3px solid #FFF0F5; */
+    /* Thicker, cuter border */
+    /* box-shadow: 4px 4px 0px rgba(255, 182, 193, 1); */
+    /* "Sticker" style shadow */
+    /* border-radius: 15px; */
+    /* Rounder corners */
+    /* padding: 10px;
     width: fit-content;
-    /* This ensures the box wraps tightly around the GIF */
+    background-color: rgba(255, 255, 255, 0.2); */
+    /* Slight frosted glass effect */
 }
 
 .gif_container img {
-    display: block;
-    /* Removes unwanted whitespace under the image */
+    display: flex;
     max-width: 100%;
     height: auto;
 }
